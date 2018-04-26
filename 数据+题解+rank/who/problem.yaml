@@ -1,0 +1,30 @@
+version: 1
+time: 1000
+memorylimit: 512
+name: "Circuit"
+
+checker: &fchk
+  source: ncmp.cpp
+  lang: cpp.gxx11
+
+case:
+  - input: who1.in
+    output: who1.ans
+  - input: who2.in
+    output: who2.ans
+  - input: who3.in
+    output: who3.ans
+  - input: who4.in
+    output: who4.ans
+  - input: who5.in
+    output: who5.ans
+  - input: who6.in
+    output: who6.ans
+  - input: who7.in
+    output: who7.ans
+  - input: who8.in
+    output: who8.ans
+  - input: who9.in
+    output: who9.ans
+  - input: who10.in
+    output: who10.ans

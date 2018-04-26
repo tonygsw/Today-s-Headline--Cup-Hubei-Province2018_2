@@ -16,27 +16,25 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-
-int recode[maxn];
-int in[maxn];
+int dp[maxn];
 vector<int> g[maxn];
-int n,a,b;int beg;
+int a,b,n,ans=0;
 void init()
 {
-    for(int i=0;i<maxn;i++)
-        recode[i]=1;
-    memset(in,0,sizeof(in));
-    for(int i=0;i<maxn;i++)
-        g[i].clear();
+    memset(dp,0,sizeof(dp));
 }
-int bfs(int beg,int fa)
+
+void dfs(int node,int fa)
 {
-    for(int i=0;i<g[beg].size();i++)
+    ll t=1;
+    for(int i=0;i<g[node].size();i++)
     {
-        if(g[beg][i]==fa)continue;
-        recode[beg]+=bfs(g[beg][i],beg);
+        if(g[node][i]==fa)continue;
+        dfs(g[node][i],node);
+        t=(t+t*dp[g[node][i]])%mod;
     }
-    return recode[beg];
+    dp[node]=t;
+    ans=(ans+t)%mod;
 }
 int main()
 {
@@ -46,18 +44,7 @@ int main()
     {
         scanf("%d%d",&a,&b);
         g[a].push_back(b);g[b].push_back(a);
-        in[a]++;in[b]++;
     }
-    for(int i=1;i<=n;i++)
-        if(in[i]==1)
-        {
-            beg=i;break;
-        }
-   // cout<<"beg="<<beg<<endl;
-    bfs(beg,0);
-    
-    int ans=0;
-    for(int i=1;i<=n;i++)
-        ans=(ans+recode[i])%mod; 
+    dfs(1,0);
     printf("%d\n",ans);
 }
