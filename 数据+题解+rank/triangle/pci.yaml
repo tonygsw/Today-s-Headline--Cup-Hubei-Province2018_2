@@ -1,0 +1,21 @@
+version: 1
+file:
+    - &fchk
+      source: rcmp9.cpp
+      lang: cpp.gxx11
+    - &fac
+      source: main.cpp
+      lang: cpp.gxx11
+
+step:
+- name: preapre
+  cmd:
+      - type: compile
+        file: *fchk
+
+- name: AC
+  cmd:
+      - type: judge
+        file: *fac
+        expect:
+            - AC

@@ -1,0 +1,12 @@
+version: 1
+time: 1000
+memorylimit: 512
+name: "Triangle"
+
+checker: &fchk
+  source: rcmp9.cpp
+  lang: cpp.gxx11
+
+case:
+  - input: triangle.in
+    output: triangle.ans

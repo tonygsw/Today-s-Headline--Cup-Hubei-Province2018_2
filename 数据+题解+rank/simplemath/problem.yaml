@@ -1,0 +1,14 @@
+version: 1
+time: 3000
+memorylimit: 512
+name: "Simple Math"
+
+checker: &fchk
+  source: lcmp.cpp
+  lang: cpp.gxx11
+
+case:
+- input: manyprime01.in
+  output: manyprime01.ans
+- input: manyprime02.in
+  output: manyprime02.ans

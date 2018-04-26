@@ -1,0 +1,29 @@
+version: 1
+file:
+    - &fchk
+      source: lcmp.cpp
+      lang: cpp.gxx11
+    - &fac
+      source: main_ac_sol.cpp
+      lang: cpp.gxx11
+    - &fac2
+      source: sol.py
+      lang: py.py36
+
+step:
+- name: preapre
+  cmd:
+      - type: compile
+        file: *fchk
+
+- name: AC
+  cmd:
+      - type: judge
+        file: *fac
+        expect:
+            - AC
+      - type: judge
+        file: *fac2
+        expect:
+            - AC
+
