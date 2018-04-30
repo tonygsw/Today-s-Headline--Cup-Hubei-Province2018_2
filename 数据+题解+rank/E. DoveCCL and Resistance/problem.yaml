@@ -1,0 +1,50 @@
+version: 1
+time: 1000
+memorylimit: 512
+name: "Circuit"
+
+checker: &fchk
+  source: checker.cpp
+  lang: cpp.gxx11
+
+case:
+  - input: 0.in
+    output: 0.ans
+  - input: 1.in
+    output: 1.ans
+  - input: 2.in
+    output: 2.ans
+  - input: 3.in
+    output: 3.ans
+  - input: 4.in
+    output: 4.ans
+  - input: 5.in
+    output: 5.ans
+  - input: 6.in
+    output: 6.ans
+  - input: 7.in
+    output: 7.ans
+  - input: 8.in
+    output: 8.ans
+  - input: 9.in
+    output: 9.ans
+  - input: 10.in
+    output: 10.ans
+  - input: 11.in
+    output: 11.ans
+  - input: 12.in
+    output: 12.ans
+  - input: 13.in
+    output: 13.ans
+  - input: 14.in
+    output: 14.ans
+  - input: 15.in
+    output: 15.ans
+  - input: 16.in
+    output: 16.ans
+  - input: 17.in
+    output: 17.ans
+  - input: 18.in
+    output: 18.ans
+  - input: 19.in
+    output: 19.ans
